@@ -40,7 +40,7 @@ function getDataWithoutChildEntities (data, childNodeKeys) {
   })
   return newData
 }
-
+let counter = 0
 function buildEntity ({
   name, data, schemas, createNodeId
 }) {
@@ -58,7 +58,7 @@ function buildEntity ({
   const dataWithoutChildEntities = getDataWithoutChildEntities(data, childNodeKeys)
   const entityNodeLinks = getEntityNodeLinks(childEntities, data)
   return [{
-    id: createNodeId(`${data.pf_username}_${name}_id`),
+    id: createNodeId(`${data.pf_username}_${name}_id_${counter++}`),
     name,
     data: dataWithoutChildEntities,
     links: entityNodeLinks,
