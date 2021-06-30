@@ -58,7 +58,7 @@ function buildEntity ({
   const dataWithoutChildEntities = getDataWithoutChildEntities(data, childNodeKeys)
   const entityNodeLinks = getEntityNodeLinks(childEntities, data)
   return [{
-    id: createNodeId(`${data.pf_username}_id`),
+    id: createNodeId(`${data.pf_username}_${name}_id`),
     name,
     data: dataWithoutChildEntities,
     links: entityNodeLinks,
