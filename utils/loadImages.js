@@ -28,7 +28,8 @@ async function createImageNodes ({
   if (fileNode) {
     await cache.set(imageCacheKey, {
       fileNodeID: fileNode.id,
-      modified: entity.data.modified
+      modified: entity.data.modified,
+      type: entity.name
     })
     console.log('Image downloaded: ' + imageName)
     return {
