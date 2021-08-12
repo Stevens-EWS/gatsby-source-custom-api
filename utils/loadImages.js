@@ -79,7 +79,7 @@ async function loadImages ({
         entity.data.modified === cachedImage.modified
       ) {
         const { fileNodeID } = cachedImage
-        touchNode(fileNodeID)
+        touchNode({ nodeId: fileNodeID })
         console.log('Image from Cache: ' + imageName)
         return Promise.resolve({
           ...entity,
